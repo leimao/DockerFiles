@@ -14,13 +14,9 @@ This is a collection of the Dockerfiles I used for different purposes.
 ### Features
 
 * Ubuntu 16.04
-
 * Latest Python 3 based TensorFlow-GPU (current Python 3.5 + TensorFlow-GPU 1.7)
-
 * CUDA 9.0 + cuDNN 7.0 devel
-
 * Partial Anaconda key libraries, such as Numpy, Pandas, etc.
-
 * OpenCV 3.4
 
 ### Usage
@@ -43,11 +39,8 @@ $ nvidia-docker run -it --name leimao-tensorflow-instance -v /home/leimao/worksp
 ### Features
 
 * Ubuntu 16.04
-
 * Latest Octave with Image package (current Octave 4.2 + Image 2.6.2) via PPA
-
 * Python 3.5 
-
 * OpenCV 3.4
 
 ### Usage
