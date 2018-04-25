@@ -9,7 +9,7 @@ University of Chicago
 This is a collection of the Dockerfiles I used for different purposes.
 
 
-## TensorFlow
+## [TensorFlow](https://github.com/leimao/DockerFiles/blob/master/Dockerfile.tensorflow)
 
 ### Features
 
@@ -38,7 +38,7 @@ $ nvidia-docker run -it --name leimao-tensorflow-instance -v /home/leimao/worksp
 ```
 
 
-## Octave
+## [Octave](https://github.com/leimao/DockerFiles/blob/master/Dockerfile.octave)
 
 ### Features
 
