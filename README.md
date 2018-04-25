@@ -19,7 +19,7 @@ This is a collection of the Dockerfiles I used for different purposes.
 
 * CUDA 9.0 + cuDNN 7.0 devel
 
-* Partial Anaconda key libraries, such as Numpy, Pandas, ...
+* Partial Anaconda key libraries, such as Numpy, Pandas, etc.
 
 * OpenCV 3.4
 
@@ -38,7 +38,7 @@ $ nvidia-docker run -it --name leimao-tensorflow-instance -v /home/leimao/worksp
 ```
 
 
-## Octave Image Processor
+## Octave
 
 ### Features
 
@@ -55,12 +55,12 @@ $ nvidia-docker run -it --name leimao-tensorflow-instance -v /home/leimao/worksp
 To build Docker image:
 
 ```bash
-$ docker build --rm -t leimao/octave-image -f Dockerfile.octaveimage .
+$ docker build --rm -t leimao/octave -f Dockerfile.octave .
 ```
 
 To run container instance on this image using ``docker``:
 
 ```bash
-$ docker run -it --name leimao-octave-image-instance -v /home/leimao/workspace:/workspace leimao/octave-image
+$ docker run -it --name leimao-octave-instance -v /home/leimao/workspace:/workspace leimao/octave
 ```
 
