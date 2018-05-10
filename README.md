@@ -57,3 +57,28 @@ To run container instance on this image using ``docker``:
 $ docker run -it --name leimao-octave-instance -v /home/leimao/workspace:/workspace leimao/octave
 ```
 
+
+## [Speech Recognition](https://github.com/leimao/DockerFiles/blob/master/Dockerfile.speech)
+
+### Features
+
+* Ubuntu 16.04
+* Latest Python 3 based TensorFlow-GPU (current Python 3.5 + TensorFlow-GPU 1.7)
+* CUDA 9.0 + cuDNN 7.0 devel
+* Partial Anaconda key libraries, such as Numpy, Pandas, etc.
+* FFmpeg 4.0
+* LibROSA 0.6
+
+### Usage
+
+To build Docker image:
+
+```bash
+$ docker build --rm -t leimao/speech -f Dockerfile.speech .
+```
+
+To run container instance on this image using ``nvidia-docker``:
+
+```bash
+$ nvidia-docker run -it --name leimao-speech-instance -v /home/leimao/workspace:/workspace -p 8888:8888 -p 6006:6006 leimao/speech
+```
