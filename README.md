@@ -34,6 +34,32 @@ $ nvidia-docker run -it --name leimao-tensorflow-instance -v /home/leimao/worksp
 ```
 
 
+## [PyTorch](https://github.com/leimao/DockerFiles/blob/master/Dockerfile.pytorch)
+
+### Features
+
+* Ubuntu 16.04
+* Latest Python 3 based PyTorch (current Python 3.5 + PyTorch 0.4)
+* CUDA 9.1 + cuDNN 7.0 devel
+* Partial Anaconda key libraries, such as Numpy, Pandas, etc.
+* OpenCV 3.4
+
+### Usage
+
+To build Docker image:
+
+```bash
+$ docker build --rm -t leimao/pytorch -f Dockerfile.pytorch .
+```
+
+To run container instance on this image using ``nvidia-docker``:
+
+```bash
+$ nvidia-docker run -it --name leimao-pytorch-instance -v /home/leimao/workspace:/workspace -p 8888:8888 -p 6006:6006 leimao/pytorch
+```
+
+
+
 ## [Octave](https://github.com/leimao/DockerFiles/blob/master/Dockerfile.octave)
 
 ### Features
