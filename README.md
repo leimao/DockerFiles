@@ -55,7 +55,7 @@ $ docker build --rm -t leimao/pytorch -f Dockerfile.pytorch .
 To run container instance on this image using ``nvidia-docker``:
 
 ```bash
-$ nvidia-docker run -it --name leimao-pytorch-instance -v /home/leimao/workspace:/workspace -p 8888:8888 -p 6006:6006 leimao/pytorch
+$ nvidia-docker run -it --name leimao-pytorch-instance -v /home/leimao/workspace:/workspace -p 8888:8888 leimao/pytorch
 ```
 
 
