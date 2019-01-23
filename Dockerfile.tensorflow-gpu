@@ -1,0 +1,46 @@
+FROM nvidia/cuda:9.1-cudnn7-devel-ubuntu16.04
+
+LABEL maintainer="Lei Mao <dukeleimao@gmail.com>"
+
+# Reference
+# http://www.science.smith.edu/dftwiki/index.php/Tutorial:_Docker_Anaconda_Python_--_4
+
+# Make workspace directory under the root directory
+RUN mkdir /workspace
+
+# Updating Ubuntu packages
+RUN apt-get update && yes|apt-get upgrade
+RUN apt-get install -y wget bzip2 
+
+# Anaconda installation
+# Anaconda3-5.2.0 comes with Python 3.6 which TensorFlow supports.
+RUN wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+RUN bash Anaconda3-5.2.0-Linux-x86_64.sh -b
+RUN rm Anaconda3-5.2.0-Linux-x86_64.sh
+
+# Set path to conda
+ENV PATH /root/anaconda3/bin:$PATH
+
+# Updating Anaconda packages
+RUN conda update conda
+# RUN conda update anaconda
+# RUN conda update --all
+
+# Install TensorFlow using Conda
+RUN conda install tensorflow-gpu=1.12.0 
+
+# Useful packages
+# OpenCV
+RUN apt-get install -y libsm6 libxext6 libxrender-dev
+RUN pip --no-cache-dir install opencv-python
+# Tqdm
+RUN pip --no-cache-dir install tqdm
+# Others
+RUN pip --no-cache-dir install joblib
+
+# TensorBoard
+EXPOSE 6006
+
+# IPython
+EXPOSE 8888
+
