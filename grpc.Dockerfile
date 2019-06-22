@@ -1,16 +1,16 @@
 # gRPC Dockerfile
 # Usage
 # docker build -f grpc.Dockerfile [--build-arg NPROCS=$(nproc)] [--tag=grpc-cmake] .
-
 ARG NPROCS=1
 
 FROM ubuntu:18.04
 
 LABEL maintainer="Lei Mao <dukeleimao@gmail.com>"
 
-RUN echo "=================================" &&\
-    echo "Using ${NPROCS} threads to build." &&\
-    echo "================================="
+# If we echo ARGs, ARGs has to go after FROM
+# RUN echo "=================================" &&\
+#     echo "Using ${NPROCS} threads to build." &&\
+#     echo "================================="
 
 # Upgrade Ubuntu components
 RUN apt-get update &&\
