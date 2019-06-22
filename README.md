@@ -108,3 +108,25 @@ To run container instance on this image using ``nvidia-docker``:
 ```bash
 $ nvidia-docker run -it --name leimao-speech-instance -v /home/leimao/workspace:/workspace -p 8888:8888 -p 6006:6006 leimao/speech
 ```
+
+## [gRPC]
+
+### Features
+
+* Ubuntu 18.04 LTS
+* gRPC (latest)
+* Protobuf (latest compatible)
+* CMake (latest)
+
+### Usage
+
+To build Docker image:
+
+```bash
+$ docker build -f grpc.Dockerfile [--build-arg NPROCS=$(nproc)] [--tag=grpc-cmake] .
+```
+To run the Docker container:
+
+```bash
+$ docker run -it --name grpc-instance -v -v /home/leimao/Workspace:/workspace grpc-cmake
+```
