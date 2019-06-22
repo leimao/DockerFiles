@@ -128,5 +128,5 @@ $ docker build -f grpc.Dockerfile [--build-arg NPROCS=$(nproc)] [--tag=grpc-cmak
 To run the Docker container:
 
 ```bash
-$ docker run -it --name grpc-instance -v -v /home/leimao/Workspace:/workspace grpc-cmake
+$ docker run -it --name grpc-instance -v /home/leimao/Workspace:/workspace grpc-cmake
 ```
